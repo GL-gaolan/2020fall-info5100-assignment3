@@ -37,21 +37,28 @@ public class Course {
     }
 
     public List<Student> getStudent(){
+        students.forEach(n->System.out.println(n));
         return students;
     }
+
     public boolean isFull(Course course){
         if (course.getNumberOfStudent() == MAX_REGISTERED_STU){
+            System.out.println(course.getName()+" is full.");
             return true;
         }
         else
+            System.out.println(course.getName()+" is not full.");
             return false;
     }
     public void registerStudent(Student student,Course course){
         if(course.isFull(course)==false){
-            students.add(student);
+            if(students.contains(student)==false){
+            students.add(student);}
+            course.setNumberOfStudent(course.getNumberOfStudent()+1);
+            System.out.println(course.getName()+" add this student successfully!");
         }
         else
-            System.out.println(course.getName()+" is full, cannot add student");
+            System.out.println(course.getName()+" fails to add student.");
     }
 
 

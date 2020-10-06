@@ -50,6 +50,7 @@ public class Course {
             System.out.println(course.getName()+" is not full.");
             return false;
     }
+
     public void registerStudent(Student student,Course course){
         if(course.isFull(course)==false){
             if(students.contains(student)==false){

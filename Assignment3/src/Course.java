@@ -5,7 +5,7 @@ public class Course {
     private String name;
     private int numberOfStudent;
     private static final int MAX_REGISTERED_STU=10;
-    List<Student>students=new ArrayList<Student>();
+    List students=new ArrayList();
 
     public Course(String name,int numberOfStudent){
         this.name=name;
@@ -36,30 +36,30 @@ public class Course {
                 '}';
     }
 
-    public List<Student> getStudent(){
+    public List getStudent(){
         students.forEach(n->System.out.println(n));
         return students;
     }
 
-    public boolean isFull(Course course){
-        if (course.getNumberOfStudent() == MAX_REGISTERED_STU){
-            System.out.println(course.getName()+" is full.");
+    public boolean isFull(){
+        if (getNumberOfStudent() == MAX_REGISTERED_STU){
+            System.out.println(name +" is full.");
             return true;
         }
         else
-            System.out.println(course.getName()+" is not full.");
+            System.out.println(name +" is not full.");
             return false;
     }
 
-    public void registerStudent(Student student,Course course){
-        if(course.isFull(course)==false){
+    public void registerStudent(Student student){
+        if(isFull()==false){
             if(students.contains(student)==false){
             students.add(student);}
-            course.setNumberOfStudent(course.getNumberOfStudent()+1);
-            System.out.println(course.getName()+" add this student successfully!");
+            setNumberOfStudent(numberOfStudent+1);
+            System.out.println(name+" add this student successfully!");
         }
         else
-            System.out.println(course.getName()+" fails to add student.");
+            System.out.println(name+" fails to add student.");
     }
 
 

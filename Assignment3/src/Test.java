@@ -9,20 +9,20 @@ public class Test {
         Course course1= new Course("info5100",10);
         Course course2= new Course("Quantum Mechanics",5);
         //test isFull()
-        course1.isFull(course1);
-        course2.isFull(course2);
+        course1.isFull( );
+        course2.isFull( );
 
         //test registerStudent()
         Student stu1=new Student(1,"Bonnie");
-        course1.registerStudent(stu1,course1);
+        course1.registerStudent(stu1);
         System.out.println("Student number of "+course1.getName()+" is "+course1.getNumberOfStudent());
-        course2.registerStudent(stu1,course2);
+        course2.registerStudent(stu1);
         System.out.println("Student number of "+course2.getName()+" is "+course2.getNumberOfStudent());
 
         Student stu2=new Student(2,"Will");
-        course1.registerStudent(stu1,course1);
+        course1.registerStudent(stu1);
         System.out.println("Student number of "+course1.getName()+" is "+course1.getNumberOfStudent());
-        course2.registerStudent(stu1,course2);
+        course2.registerStudent(stu1);
         System.out.println("Student number of "+course2.getName()+" is "+course2.getNumberOfStudent());
 
         //test getStudent()
